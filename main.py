@@ -1,10 +1,23 @@
 import demoji
+import sys
+import interp
 from lex import parse
 
-if __name__ == "__main__":
+
+def start():
     try:
         demoji.set_emoji_pattern()
     except IOError:
         demoji.download_codes()
-    program = parse("🔁2️⃣🔜🖨1️⃣")
-    print(program.run())
+    if len(sys.argv) <= 1:
+        print("No program to run")
+        return
+    with open(sys.argv[1], encoding="UTF-8") as file:
+        if len(sys.argv) > 2:
+            interp.save(sys.argv[2:])
+        text = file.read()
+        interp.run(text)
+
+
+if __name__ == "__main__":
+    start()

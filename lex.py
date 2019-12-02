@@ -11,10 +11,15 @@ class Function:
         self.action = action
         self.arguments = arguments
 
-    def execute(self):
+    def execute(self, *args):
+        import interp
+        saved = interp.arguments
+        if len(args) > 0:
+            interp.save(args)
         values = []
         for argument in self.arguments:
             values.append(argument.run())
+        interp.save(saved)
         return self.action(*values)
 
     def run(self):
