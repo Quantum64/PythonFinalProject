@@ -8,8 +8,8 @@ def save(args):
     arguments = args
 
 
-def run(program):
+def run(program, args=[]):
     global arguments
-    arguments.clear()
+    save(args)
     function = parse(program)
     print(function.run())

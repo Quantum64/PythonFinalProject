@@ -13,6 +13,21 @@ symbols = {
     "📌": lambda x, i, z: put(x, i, z),  # Set element at index to z in x
     "🔮": lambda x: random.randint(0, x),  # Random number between 0 and x
 
+    # Casting
+    "🐅": lambda x: int(x),  # Convert x to an int
+    "🐆": lambda x: str(x),  # Convert x to a string
+    "🦛": lambda x: float(x),  # Convert x to a float
+
+    # Math
+    "➕": lambda a, b: a + b,  # Add
+    "➖": lambda a, b: a - b,  # Subtract
+    "✖️": lambda a, b: a * b,  # Multiply
+    "➗": lambda a, b: a / b,  # Divide
+    "😀": lambda a: a + 1,  # Increment
+    "🙁": lambda a: a - 1,  # Decrement
+    "😁": lambda a, b: a % b,  # Mod
+    "😂": lambda a, b: a // b,  # Integer division
+
     # Lists
     "📥": lambda x: [x],  # Return singleton list of x
     "➡️": lambda x: list(range(x)),  # Range from 0 to x,
@@ -55,11 +70,34 @@ symbols = {
     "9️⃣": lambda: 9,  # Return 9
     "🔟": lambda: 10,  # Return 10
 
-    # Math
-    "➕": lambda a, b: a + b,
-    "➖": lambda a, b: a - b,
-    "✖️": lambda a, b: a * b,
-    "➗": lambda a, b: a / b
+    # Character constants
+    "⚽️": lambda: "a",  # Return a
+    "🏀": lambda: "b",  # Return b
+    "🏈": lambda: "c",  # Return c
+    "🎲": lambda: "d",  # Return d
+    "🥎": lambda: "e",  # Return e
+    "🏐": lambda: "f",  # Return f
+    "🏉": lambda: "g",  # Return g
+    "🎾": lambda: "h",  # Return h
+    "🥏": lambda: "i",  # Return i
+    "🎱": lambda: "j",  # Return j
+    "🏓": lambda: "k",  # Return k
+    "🏸": lambda: "l",  # Return l
+    "🥅": lambda: "m",  # Return m
+    "🏒": lambda: "n",  # Return n
+    "🏑": lambda: "o",  # Return o
+    "🥍": lambda: "p",  # Return p
+    "🏏": lambda: "q",  # Return q
+    "♟": lambda: "r",  # Return r
+    "🏹": lambda: "s",  # Return s
+    "🎣": lambda: "t",  # Return t
+    "🥊": lambda: "u",  # Return u
+    "🥋": lambda: "v",  # Return v
+    "🎽": lambda: "w",  # Return w
+    "⛸": lambda: "x",  # Return x
+    "🥌": lambda: "y",  # Return y
+    "🛷": lambda: "z",  # Return z
+    "🛹": lambda: " "  # Return " "
 }
 
 

@@ -13,10 +13,11 @@ def start():
         print("No program to run")
         return
     with open(sys.argv[1], encoding="UTF-8") as file:
+        parameters = []
         if len(sys.argv) > 2:
-            interp.save(sys.argv[2:])
+            parameters = sys.argv[2:]
         text = file.read()
-        interp.run(text)
+        interp.run(text, parameters)
 
 
 if __name__ == "__main__":

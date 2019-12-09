@@ -30,10 +30,10 @@ class Function:
 
 def parse(program):
     emoji = demoji._EMOJI_PAT.findall(program)
-    return visit(emoji)[0]
+    return visit(emoji, len(emoji))[0]
 
 
-def visit(program):
+def visit(program, size):
     """
     Convert's text to an AST
     """
@@ -41,11 +41,12 @@ def visit(program):
         raise Exception("Unexpected end of program!")
     symbol = program[0]
     if symbol not in symbols:
-        raise Exception("Unknown symbol in program: " + symbol)
+        raise Exception("Unknown symbol in program '" + symbol +
+                        "' at character " + str(size - len(program)))
     current = symbols[symbol]
     program = program[1:]
     arguments = []
     for _ in range(len(signature(current).parameters)):
-        function, program = visit(program)
+        function, program = visit(program, size)
         arguments.append(function)
     return (Function(symbol, current, arguments), program)
